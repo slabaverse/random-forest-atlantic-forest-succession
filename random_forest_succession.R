@@ -61,8 +61,9 @@ cat("Plots imported:", nrow(df_complete), "\n")
 cat("Total variables:", ncol(df_complete) - 1, "(+ response)\n\n")
 
 # Drop categorical/geographic fields not used as predictors
+
 df_complete <- df_complete[, !(names(df_complete) %in%
-  c("ab", "s_reg", "classe", "x_longitude", "y_latitude",
+  c("classe", "x_longitude", "y_latitude",
     "municipio", "bacia_hidrografica", "regiao_fitoecologica"))]
 
 # Preserve plot IDs before any row-altering transformation
@@ -1168,3 +1169,4 @@ cat("  TRAINING - Accuracy:", round(conf_treino$overall["Accuracy"], 4), "\n")
 cat("  TEST     - Accuracy:", round(conf_teste$overall["Accuracy"], 4), "\n\n")
 
 cat("Pipeline complete\n")
+
